@@ -37,7 +37,7 @@ module MotherBrain
         end
 
         def method_missing(key, value = nil)
-          store key.to_sym, value
+          store key.to_sym, value if value
         end
 
         def lines
