@@ -32,7 +32,7 @@ module MotherBrain
         end
 
         def parse_line(line)
-          eval line, binding
+          eval line, scope, path
         rescue
         end
 
@@ -60,11 +60,8 @@ module MotherBrain
           }
         end
 
-        # Because it's common to set the local variable current_dir in a knife.rb
-        # and then interpolate that into strings, set it here because that's hard
-        # to parse.
-        def current_dir
-          File.dirname(file_path)
+        def scope
+          @scope ||= binding
         end
     end
   end

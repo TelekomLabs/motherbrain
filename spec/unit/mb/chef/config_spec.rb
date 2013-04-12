@@ -9,7 +9,8 @@ describe MotherBrain::Chef::Config do
       user "root"
       pass "secret"
       mode :none
-      variable = 123
+      var = 123
+      interpolated "\#{var}"
     CHEF_CONFIG
   }
 
@@ -26,8 +27,11 @@ describe MotherBrain::Chef::Config do
       expect(chef_config[:user]).to eq("root")
       expect(chef_config[:pass]).to eq("secret")
       expect(chef_config[:mode]).to eq(:none)
+    end
 
+    it "parses local variables that can be used on other lines" do
       expect(chef_config[:variable]).to be_nil
+      expect(chef_config[:interpolated]).to eq("123")
     end
   end
 end
