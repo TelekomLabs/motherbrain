@@ -89,6 +89,7 @@ module MotherBrain
             requires :name, type: String, desc: "name of the plugin to use"
             optional :version, sem_ver: true, desc: "version of the plugin to use"
           end
+          optional :installer_url, type: String, desc: "the location of the Omnibus installer's install.sh"
           optional :chef_version, type: String, desc: "version of Chef to install on the node(s)"
           optional :component_versions, type: Hash, desc: "component versions to set with override attributes"
           optional :cookbook_versions, type: Hash, desc: "cookbook versions to set on the environment"
@@ -116,6 +117,7 @@ module MotherBrain
             requires :name, type: String, desc: "name of the plugin to use"
             optional :version, sem_ver: true, desc: "version of the plugin to use"
           end
+          optional :installer_url, type: String, desc: "the location of the Omnibus installer's install.sh"
           optional :chef_version, type: String, desc: "version of Chef to install on the node(s)"
           optional :component_versions, type: Hash, desc: "component versions to set with override attributes"
           optional :cookbook_versions, type: Hash, desc: "cookbook versions to set on the environment"
@@ -132,7 +134,7 @@ module MotherBrain
             params[:environment_id].freeze,
             manifest.freeze,
             plugin.freeze,
-            params.slice(:chef_version, :component_versions, :cookbook_versions, :environment_attributes, :force, :bootstrap_proxy, :hints).freeze
+            params.slice(:installer_url, :chef_version, :component_versions, :cookbook_versions, :environment_attributes, :force, :bootstrap_proxy, :hints).freeze
           )
         end
 

@@ -133,6 +133,8 @@ module MotherBrain
       #
       # @option options [String] :chef_version
       #   version of Chef to install on the node
+      # @option options [String] :installer_url
+      #   location of the Omnibus install.sh
       # @option options [Hash] :component_versions (Hash.new)
       #   Hash of components and the versions to set them to
       # @option options [Hash] :cookbook_versions (Hash.new)

@@ -57,6 +57,9 @@ module MotherBrain
                 method_option :chef_version,
                   type: :string,
                   desc: "The version of Chef to bootstrap the node(s) with"
+                method_option :installer_url,
+                  type: :string,
+                  desc: "The URL of the Omnibus install.sh"
                 method_option :component_versions,
                   type: :hash,
                   desc: "The component versions to set with override attributes",
@@ -99,6 +102,9 @@ module MotherBrain
                 method_option :chef_version,
                   type: :string,
                   desc: "The version of Chef to bootstrap the node(s) with"
+                method_option :installer_url,
+                  type: :string,
+                  desc: "The URL of the Omnibus install.sh"
                 method_option :component_versions,
                   type: :hash,
                   desc: "The component versions to set with override attributes",

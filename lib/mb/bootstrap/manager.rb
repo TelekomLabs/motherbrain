@@ -48,6 +48,8 @@ module MotherBrain
       #   an initial run list to bootstrap with
       # @option options [String] :chef_version
       #   version of Chef to install on the node
+      # @option options [String] :installer_url
+      #   location of the Omnibus install.sh
       # @option options [Hash] :hints (Hash.new)
       #   a hash of Ohai hints to place on the bootstrapped node
       # @option options [Boolean] :sudo (true)
@@ -166,6 +168,8 @@ module MotherBrain
       #   an initial run list to bootstrap with
       # @option options [String] :chef_version
       #   version of Chef to install on the node
+      # @option options [String] :installer_url
+      #   location of the Omnibus install.sh
       # @option options [Hash] :hints (Hash.new)
       #   a hash of Ohai hints to place on the bootstrapped node
       # @option options [Boolean] :sudo (true)
