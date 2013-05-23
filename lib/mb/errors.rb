@@ -416,6 +416,14 @@ module MotherBrain
     error_code(4003)
   end
 
+  class ValidatorNotFound < BootstrapError
+    error_code(4004)
+
+    def message
+      "No validator pem found at #{Config.chef_config[:validation_key]}"
+    end
+  end
+
   # Provision errors
   class ProvisionError < MBError
     exit_code(20)
@@ -502,4 +510,5 @@ module MotherBrain
       "An item named '#{item_name}' was not found in the '#{data_bag_name}' data bag."
     end
   end
+
 end

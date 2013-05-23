@@ -129,6 +129,12 @@ describe MB::Bootstrap::Worker do
       result.should each be_a(Hash)
     end
 
+    it "raises a friendly error when the Validation pem is not found" do
+      chef_connection.stub_chain(:node, :bootstrap).and_raise(Ridley::Errors::ValidatorNotFound)
+
+      -> { subject.full_bootstrap(hosts) }.should raise_error(MotherBrain::ValidatorNotFound)
+    end
+
     context "each response" do
       let(:response) { subject.full_bootstrap(hosts).first }
 

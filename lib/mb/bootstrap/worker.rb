@@ -192,6 +192,9 @@ module MotherBrain
 
           response
         end
+
+      rescue Ridley::Errors::ValidatorNotFound
+        raise ValidatorNotFound
       end
 
       # Perform a bootstrap on a group of nodes which have already been registered with the Chef server.
