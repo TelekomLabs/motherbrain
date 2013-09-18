@@ -37,7 +37,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'celluloid', '~> 0.15.1'
   s.add_dependency 'dcell', '~> 0.15.0'
-  #s.add_dependency 'reel', '0.4.0'
+  s.add_dependency 'reel', '0.4.0'
+  s.add_dependency 'reel-rack', '~> 0.0.2'
   s.add_dependency 'grape', '~> 0.5.0'
   s.add_dependency 'net-ssh'
   s.add_dependency 'net-sftp'
