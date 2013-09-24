@@ -20,6 +20,9 @@ require 'mb/core_ext'
 require 'mb/ridley_ext'
 require 'mb/thor_ext'
 
+Celluloid.shutdown_timeout = 120
+$CELLULOID_DEBUG = true
+
 module MotherBrain
   autoload :API, 'mb/api'
   autoload :ApiClient, 'mb/api_client'

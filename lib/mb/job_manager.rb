@@ -72,7 +72,7 @@ module MotherBrain
     end
 
     def terminate_active
-      @_active.map { |job| job.terminate if job.alive? }
+      @_active.map { |job| job.async.terminate if job.alive? }
     end
 
     # Generate a new Job ID

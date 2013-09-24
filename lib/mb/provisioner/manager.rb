@@ -185,7 +185,7 @@ module MotherBrain
       rescue => ex
         job.report_failure(ex)
       ensure
-        job.terminate if job && job.alive?
+        job.async.terminate if job && job.alive?
       end
 
       private
@@ -206,7 +206,7 @@ module MotherBrain
 
         def finalize_callback
           log.debug { "Bootstrap Manager stopping..." }
-          @provisioner_supervisor.terminate
+          @provisioner_supervisor.async.terminate
         end
     end
   end

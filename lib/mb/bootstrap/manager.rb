@@ -233,7 +233,7 @@ module MotherBrain
 
         def finalize_callback
           log.debug { "Bootstrap Manager stopping..." }
-          worker_pool.terminate if worker_pool && worker_pool.alive?
+          worker_pool.async.terminate if worker_pool && worker_pool.alive?
         end
 
         def validate_bootstrap_configuration!(manifest, plugin)

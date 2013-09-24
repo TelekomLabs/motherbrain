@@ -177,7 +177,7 @@ module MotherBrain
     private
 
       def finalize_callback
-        unregister_lock if lock_manager.alive?
+        lock_manager.async.unregister(Actor.current) if lock_manager.alive?
       end
 
       # Reports a job status
@@ -273,10 +273,6 @@ module MotherBrain
         result = locks.find(data_bag_id)
 
         result.to_hash if result
-      end
-
-      def unregister_lock
-        lock_manager.unregister(Actor.current)
       end
 
       # Write the lock to the data bag.

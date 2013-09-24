@@ -62,7 +62,7 @@ module MotherBrain
     private
 
       def finalize_callback
-        connection.terminate if connection.alive?
+        connection.async.terminate if connection && connection.alive?
       end
   end
 end
