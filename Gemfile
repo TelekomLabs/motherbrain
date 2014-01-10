@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 gemspec
 
+# TODO drop this after next Ridley release
+gem 'varia_model', '>= 0.3.0'
+
 if File.exists?('Gemfile.local') then
   eval File.read('Gemfile.local'), nil, 'Gemfile.local'
 end
@@ -23,6 +26,7 @@ group :development do
   gem 'geminabox'
   gem 'ronn', platforms: :ruby
   gem 'chef-zero', '~> 1.5.0'
+  gem 'pry'
 end
 
 group :test do
